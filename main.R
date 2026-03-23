@@ -55,7 +55,7 @@ make_se <- function(counts_csv, metafile_csv, selected_times) {
 #' @examples results <- return_deseq_res(se, ~ timepoint)
 return_deseq_res <- function(se, design) {
     dds <- DESeqDataSet(se, design = design)
-    dds <- dds[rowSums(counts(dds)) >= 10, ]
+    # dds <- dds[rowSums(counts(dds)) >= 10, ]
     
     dds <- DESeq(dds)
     
